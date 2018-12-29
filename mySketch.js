@@ -1,3 +1,5 @@
+
+
 var mass = [];
 var positionX = [];
 var positionY = [];
@@ -8,15 +10,14 @@ var velocityY = [];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	noStroke();
-	fill(64, 255, 255, 192);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function draw() {
 	background(32);
-	
+	noStroke();
+	fill(64, 255, 255, 192);
 	for (var particleA = 0; particleA < mass.length; particleA++) {
 		var accelerationX = 0, accelerationY = 0;
 		
