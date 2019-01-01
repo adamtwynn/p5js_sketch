@@ -7,13 +7,13 @@ var velocityY = [];
 class Particle{
 	constructor(x,y,m,r,g,b,o){
 	//remember to add defaults
-		this.positionX = x;
-		this.positionY = y;
-		this.mass = m;
+		this.positionX = x || mouseX;
+		this.positionY = y || mouseY;
+		this.mass = m || random(0.003, 0.03);
 		this.red = r||64;
 		this.green = g||255;
-		this.blue = b||244;
-		this.opacity = o|192;
+		this.blue = b||255;
+		this.opacity = o||192;
 	}
 	
 	setRed(red){
@@ -28,9 +28,6 @@ class Particle{
 		this.blue = blue;
 	}
 	
-	setOpacity(opacity){
-		this.opacity = opacity;
-	}
 	
 	addNewParticle(){
 		mass.push(this.mass);
@@ -38,14 +35,16 @@ class Particle{
 	    positionY.push(this.positionY);
 	    velocityX.push(0);
      	velocityY.push(0);
-     	noStroke();
-		fill(this.red, this.green, this.blue, this.opacity);
+
 
 	}
 	
 
 		
 	draw(){
+
+		noStroke();
+		fill(this.red, this.green, this.blue, this.opacity);
 		for (var particleA = 0; particleA < mass.length; particleA++) {
 		var accelerationX = 0, accelerationY = 0;
 		

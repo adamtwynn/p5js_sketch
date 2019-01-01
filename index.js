@@ -6,13 +6,12 @@ function setup(){
 }
 
 function mouseClicked(){
-	//colour isnt actually needed here or below 
-	p = new Particle (mouseX, mouseY, random(0.003, 0.03));
+	p = new Particle ();
 	p.addNewParticle();
 }
 
 function mouseDragged(){
-	p = new Particle (mouseX, mouseY, random(0.003, 0.03));
+	p = new Particle ();
 	p.addNewParticle();
 }
 	
@@ -22,35 +21,28 @@ function draw(){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    var cr = document.getElementById("colred");
+    var r = document.getElementById("colred");
     function changeRed(event){
 	let red = document.getElementById("colred").value;
 	p.setRed(red);
     }
     
-    var cg = document.getElementById("colgreen");
+    var g = document.getElementById("colgreen");
     function changeGreen(event){
 	let green = document.getElementById("colgreen").value;
 	p.setGreen(green);
     }
         
-    var cb = document.getElementById("colblue");
+    var b = document.getElementById("colblue");
     function changeBlue(event){
 	let blue = document.getElementById("colblue").value;
 	p.setBlue(blue);
     }
     
-    var co = document.getElementById("opacity");
-    function changeOpacity(event){
-	let opacity = document.getElementById("opacity").value;
-	p.setOpacity(opacity);
-    }
-    
-    cr.addEventListener("change", changeRed);
-    cg.addEventListener("change", changeGreen);
-	cb.addEventListener("change", changeBlue);
-	co.addEventListener("change", changeOpacity);
-   
+    r.addEventListener("change", changeRed);
+    g.addEventListener("change", changeGreen);
+	b.addEventListener("change", changeBlue);
+
    
     var cf = document.getElementById("colour_form");
 
