@@ -18,9 +18,7 @@ function mouseDragged(){
 function draw(){
 	background(32);
 	p.draw();
-}
-
-document.addEventListener("DOMContentLoaded", function(){
+	document.addEventListener("DOMContentLoaded", function(){
     var r = document.getElementById("colred");
     function changeRed(event){
 	let red = document.getElementById("colred").value;
@@ -49,3 +47,6 @@ document.addEventListener("DOMContentLoaded", function(){
     cf.addEventListener("submit", function (event){
 	event.preventDefault()});
 });
+
+}
+
