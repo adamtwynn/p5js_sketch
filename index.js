@@ -18,7 +18,6 @@ function mouseDragged(){
 function draw(){
 	background(32);
 	p.draw();
-	
 }
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -50,3 +49,6 @@ document.addEventListener("DOMContentLoaded", function(){
     cf.addEventListener("submit", function (event){
 	event.preventDefault()});
 });
+
+var slider = document.getElementById("colred2");
+var output = document.getElementById("demo");

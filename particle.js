@@ -12,7 +12,7 @@ class Particle{
 		this.mass = m || random(0.003, 0.03);
 		this.red = r||64;
 		this.green = g||255;
-		this.blue = b||255;
+		this.blue = b ||255;
 		this.opacity = o||192;
 	}
 	
@@ -35,16 +35,12 @@ class Particle{
 	    positionY.push(this.positionY);
 	    velocityX.push(0);
      	velocityY.push(0);
-
-
-	}
-	
-
-		
+     	
+	}		
 	draw(){
-
-		noStroke();
 		fill(this.red, this.green, this.blue, this.opacity);
+		noStroke();
+
 		for (var particleA = 0; particleA < mass.length; particleA++) {
 		var accelerationX = 0, accelerationY = 0;
 		
@@ -72,4 +68,5 @@ class Particle{
 		ellipse(positionX[particle], positionY[particle], mass[particle] * 1000, mass[particle] * 1000);
 	}
 	}
+	
 }
