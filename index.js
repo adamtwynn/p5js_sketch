@@ -8,11 +8,13 @@ function setup(){
 function mouseClicked(){
 	p = new Particle ();
 	p.addNewParticle();
+
 }
 
 function mouseDragged(){
 	p = new Particle ();
 	p.addNewParticle();
+
 }
 	
 function draw(){
@@ -39,9 +41,12 @@ document.addEventListener("DOMContentLoaded", function(){
 	p.setBlue(blue);
     }
     
+  
+    
     r.addEventListener("change", changeRed);
     g.addEventListener("change", changeGreen);
 	b.addEventListener("change", changeBlue);
+	
 
    
     var cf = document.getElementById("colour_form");

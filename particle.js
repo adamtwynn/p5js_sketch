@@ -3,31 +3,34 @@ var positionX = [];
 var positionY = [];
 var velocityX = [];
 var velocityY = [];
+var dred = 64
+var dgreen = 255
+var dblue = 255
 
 class Particle{
 	constructor(x,y,m,r,g,b,o){
-	//remember to add defaults
 		this.positionX = x || mouseX;
 		this.positionY = y || mouseY;
 		this.mass = m || random(0.003, 0.03);
-		this.red = r||64;
-		this.green = g||255;
-		this.blue = b ||255;
+		this.red = r||dred;
+		this.green = g||dgreen;
+		this.blue = b ||dblue;
 		this.opacity = o||192;
 	}
 	
 	setRed(red){
-		this.red = red;
+		dred = red;
 	}
 	
 	setGreen(green){
-		this.green = green;
+		dgreen = green;
 	}
 	
 	setBlue(blue){
-		this.blue = blue;
+		dblue = blue;
 	}
 	
+
 	
 	addNewParticle(){
 		mass.push(this.mass);
