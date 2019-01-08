@@ -1,7 +1,9 @@
 var p;
 
 function setup(){
-	createCanvas(windowWidth,windowHeight);
+createCanvas(windowWidth,windowHeight);
+//	createCanvas(windowWidth,windowHeight,WEBGL);
+//	g = createGraphics(400,400);
 	p = new Particle ();
 }
 
@@ -16,10 +18,11 @@ function mouseDragged(){
 	p.addNewParticle();
 
 }
-
 function draw(){
+//function draw(g){
 	background(32);
-	p.draw();
+	p.draw()
+//	p.draw(g);
 }
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -59,6 +62,3 @@ document.addEventListener("DOMContentLoaded", function(){
     cf.addEventListener("submit", function (event){
 	event.preventDefault()});
 });
-
-var slider = document.getElementById("colred2");
-var output = document.getElementById("demo");

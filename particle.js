@@ -42,10 +42,35 @@ class Particle{
      	velocityY.push(0);
 	}
 
-	draw(){
+	fill(r,g,b,o){
+		if(g){
+			g.fill(this.red, this.green, this.blue, this.opacity);
+		}
+		else{
+			fill(this.red, this.green, this.blue, this.opacity);
+		}
+	}
+
+	noStroke(){
+		if(g){
+			g.noStroke();
+		}
+		else{
+		noStroke()
+		}
+	}
+
+	ellipse(x, y, m1, m2){
+		if(g){
+			g.ellipse(positionX[particle], positionY[particle], mass[particle] * 1000, mass[particle] * 1000);
+		}
+		else{
+			ellipse(positionX[particle], positionY[particle], mass[particle] * 1000, mass[particle] * 1000);
+		}
+	}
+	draw(g){
 		fill(this.red, this.green, this.blue, this.opacity);
 		noStroke();
-
 		for (var particleA = 0; particleA < mass.length; particleA++) {
 		var accelerationX = 0, accelerationY = 0;
 
