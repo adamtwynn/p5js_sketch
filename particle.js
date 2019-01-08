@@ -8,14 +8,14 @@ var dgreen = 255
 var dblue = 255
 
 class Particle{
-	constructor(x,y,m,r,g,b,o){
-		this.positionX = x || mouseX;
-		this.positionY = y || mouseY;
-		this.mass = m || random(0.003, 0.03);
-		this.red = r||dred;
-		this.green = g||dgreen;
-		this.blue = b ||dblue;
-		this.opacity = o||192;
+	constructor(x=mouseX,y=mouseY,m=random(0.003,0.03),r=dred,g=dgreen,b=dblue,o=192){
+		this.positionX = x;
+		this.positionY = y;
+		this.mass = m;
+		this.red = r;
+		this.green = g;
+		this.blue = b;
+		this.opacity = o;
 	}
 
 	setRed(red){
@@ -33,6 +33,7 @@ class Particle{
 	restart(reset){
 		location.reload();
 	}
+
 	addNewParticle(){
 		mass.push(this.mass);
 		positionX.push(this.positionX);
