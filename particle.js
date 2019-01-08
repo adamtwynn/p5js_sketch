@@ -6,9 +6,10 @@ var velocityY = [];
 var dred = 64
 var dgreen = 255
 var dblue = 255
+var dsize = 1000
 
 class Particle{
-	constructor(x=mouseX,y=mouseY,m=random(0.003,0.03),r=dred,g=dgreen,b=dblue,o=192){
+	constructor(x=mouseX,y=mouseY,m=random(0.003,0.03),r=dred,g=dgreen,b=dblue,o=192,s=dsize){
 		this.positionX = x;
 		this.positionY = y;
 		this.mass = m;
@@ -16,6 +17,7 @@ class Particle{
 		this.green = g;
 		this.blue = b;
 		this.opacity = o;
+		this.size = s
 	}
 
 	setRed(red){
@@ -34,6 +36,12 @@ class Particle{
 		location.reload();
 	}
 
+	larger(large){
+		dsize = dsize*2
+	}
+	smaller(small){
+		dsize = dsize/2
+	}
 
 	addNewParticle(){
 		mass.push(this.mass);
@@ -70,7 +78,7 @@ class Particle{
 	for (var particle = 0; particle < mass.length; particle++) {
 		positionX[particle] += velocityX[particle];
 		positionY[particle] += velocityY[particle];
-		ellipse(positionX[particle], positionY[particle], mass[particle] * 1000, mass[particle] * 1000);
+		ellipse(positionX[particle], positionY[particle], mass[particle] * this.size, mass[particle] * this.size);
 	}
 	}
 
