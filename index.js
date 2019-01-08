@@ -4,19 +4,7 @@ function setup(){
 createCanvas(windowWidth,windowHeight);
 //	createCanvas(windowWidth,windowHeight,WEBGL);
 //	g = createGraphics(400,400);
-	p = new Particle ();
-}
-
-function mouseClicked(){
-	p = new Particle ();
-	p.addNewParticle();
-
-}
-
-function mouseDragged(){
-	p = new Particle ();
-	p.addNewParticle();
-
+	p = new Particle (mouseX,mouseY);
 }
 function draw(){
 //function draw(g){
@@ -24,6 +12,15 @@ function draw(){
 	p.draw()
 //	p.draw(g);
 }
+function mouseClicked(){
+	p.addNewParticle();
+}
+
+function mouseDragged(){
+	p.addNewParticle();
+
+}
+
 
 document.addEventListener("DOMContentLoaded", function(){
     var r = document.getElementById("colred");

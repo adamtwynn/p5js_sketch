@@ -3,13 +3,9 @@ var positionX = [];
 var positionY = [];
 var velocityX = [];
 var velocityY = [];
-var dred = 64
-var dgreen = 255
-var dblue = 255
-var dsize = 1000
 
 class Particle{
-	constructor(x=mouseX,y=mouseY,m=random(0.003,0.03),r=dred,g=dgreen,b=dblue,o=192,s=dsize){
+	constructor(x=mouseX,y=mouseY,m=random(0.003,0.03),r=64,g=255,b=255,o=192,s=1000){
 		this.positionX = x;
 		this.positionY = y;
 		this.mass = m;
@@ -21,15 +17,15 @@ class Particle{
 	}
 
 	setRed(red){
-		dred = red;
+		this.red = red;
 	}
 
 	setGreen(green){
-		dgreen = green;
+		this.green = green;
 	}
 
 	setBlue(blue){
-		dblue = blue;
+		this.blue = blue;
 	}
 
 	restart(reset){
@@ -37,13 +33,16 @@ class Particle{
 	}
 
 	larger(large){
-		dsize = dsize*2
+		this.size = this.size*2;
 	}
 	smaller(small){
-		dsize = dsize/2
+		this.size = this.size/2;
 	}
 
 	addNewParticle(){
+		this.positionX = mouseX;
+		this.positionY = mouseY;
+		this.mass = random(0.003, 0.03)
 		mass.push(this.mass);
 		positionX.push(this.positionX);
 	    positionY.push(this.positionY);
@@ -54,6 +53,7 @@ class Particle{
 	draw(){
 		fill(this.red, this.green, this.blue, this.opacity);
 		noStroke();
+
 		for (var particleA = 0; particleA < mass.length; particleA++) {
 		var accelerationX = 0, accelerationY = 0;
 
