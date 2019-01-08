@@ -46,14 +46,29 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		var reset = document.getElementById("reset");
 		function restart(event){
-	let reset = document.getElementById("reset").value;
-	p.restart(reset);
+		let reset = document.getElementById("reset").value;
+		p.restart(reset);
+		}
+
+		var s = document.getElementById("half");
+		function smaller(event){
+		let small = document.getElementById("half").value;
+		p.smaller(small);
+		}
+
+		var l = document.getElementById("double");
+		function larger(event){
+		let large = document.getElementById("double").value;
+		p.larger(large);
 		}
 
     r.addEventListener("change", changeRed);
     g.addEventListener("change", changeGreen);
 		b.addEventListener("change", changeBlue);
 		reset.addEventListener("click", restart);
+		s.addEventListener("click", smaller);
+		l.addEventListener("click", larger);
+
 
 
 

@@ -34,6 +34,7 @@ class Particle{
 		location.reload();
 	}
 
+
 	addNewParticle(){
 		mass.push(this.mass);
 		positionX.push(this.positionX);
