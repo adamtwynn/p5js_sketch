@@ -5,19 +5,22 @@
 
     <script  type="text/javascript" src="particle.js"></script>
     <script  type="text/javascript" src="index.js"></script>
+    <script>
+    alert("Click or Drag the mouse to create particles")
+    </script>
     </head>
-    
+
 <body>
 
 	<form id = "colour_form">
 		Red:
-    	<input type="range" min="0" max="255" value="64" class="slider" id="colred">
-    	Green:
+    <input type="range" min="0" max="255" value="64" class="slider" id="colred">
+    Green:
 		<input type="range" min="0" max="255" value="255" class="slider" id="colgreen">
-        Blue:
-        <input type="range" min="0" max="255" value="255" class="slider" id="colblue">
-    
-    	
+    Blue:
+    <input type="range" min="0" max="255" value="255" class="slider" id="colblue">
+    <button type="button" id = "reset">Reset</button>
+
     </form>
 </body>
 

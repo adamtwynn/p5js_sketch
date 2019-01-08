@@ -17,36 +17,37 @@ class Particle{
 		this.blue = b ||dblue;
 		this.opacity = o||192;
 	}
-	
+
 	setRed(red){
 		dred = red;
 	}
-	
+
 	setGreen(green){
 		dgreen = green;
 	}
-	
+
 	setBlue(blue){
 		dblue = blue;
 	}
-	
 
-	
+	restart(reset){
+		location.reload();
+	}
 	addNewParticle(){
 		mass.push(this.mass);
 		positionX.push(this.positionX);
 	    positionY.push(this.positionY);
 	    velocityX.push(0);
      	velocityY.push(0);
-     	
-	}		
+	}
+
 	draw(){
 		fill(this.red, this.green, this.blue, this.opacity);
 		noStroke();
 
 		for (var particleA = 0; particleA < mass.length; particleA++) {
 		var accelerationX = 0, accelerationY = 0;
-		
+
 		for (var particleB = 0; particleB < mass.length; particleB++) {
 			if (particleA != particleB) {
 				var distanceX = positionX[particleB] - positionX[particleA];
@@ -60,16 +61,16 @@ class Particle{
 				accelerationY += force * distanceY;
 			}
 		}
-		
+
 		velocityX[particleA] = velocityX[particleA] * 0.99 + accelerationX * mass[particleA];
 		velocityY[particleA] = velocityY[particleA] * 0.99 + accelerationY * mass[particleA];
 	}
-	
+
 	for (var particle = 0; particle < mass.length; particle++) {
 		positionX[particle] += velocityX[particle];
 		positionY[particle] += velocityY[particle];
 		ellipse(positionX[particle], positionY[particle], mass[particle] * 1000, mass[particle] * 1000);
 	}
 	}
-	
+
 }
