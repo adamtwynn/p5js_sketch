@@ -39,9 +39,13 @@ class Particle{
 		this.size = this.size/2;
 	}
 
-	addNewParticle(){
+	resetmouseposition(mouseX,mouseY){
 		this.positionX = mouseX;
 		this.positionY = mouseY;
+	}
+
+	addNewParticle(){
+		this.resetmouseposition(mouseX,mouseY);
 		this.mass = random(0.003, 0.03)
 		mass.push(this.mass);
 		positionX.push(this.positionX);
