@@ -1,20 +1,24 @@
-var mass = [];
-var positionX = [];
-var positionY = [];
-var velocityX = [];
-var velocityY = [];
+
 
 class Particle{
 	constructor(x=mouseX,y=mouseY,m=random(0.003,0.03),r=64,g=255,b=255,o=192,s=1000){
-		this.positionX = x;
-		this.positionY = y;
-		this.mass = m;
+		this.X = x;
+		this.Y = y;
+		this.radius = m;
 		this.red = r;
 		this.green = g;
 		this.blue = b;
 		this.opacity = o;
 		this.size = s
+
+		this.mass = [];
+  	this.positionX = [];
+		this.positionY = [];
+		this.velocityX = [];
+		this.velocityY = [];
 	}
+
+
 
 	setRed(red){
 		this.red = red;
@@ -40,49 +44,49 @@ class Particle{
 	}
 
 	resetmouseposition(mouseX,mouseY){
-		this.positionX = mouseX;
-		this.positionY = mouseY;
+		this.X = mouseX;
+		this.Y = mouseY;
 	}
 
 	addNewParticle(){
 		this.resetmouseposition(mouseX,mouseY);
-		this.mass = random(0.003, 0.03)
-		mass.push(this.mass);
-		positionX.push(this.positionX);
-	    positionY.push(this.positionY);
-	    velocityX.push(0);
-     	velocityY.push(0);
+		this.radius = random(0.003, 0.03)
+		this.mass.push(this.radius);
+		this.positionX.push(this.X);
+	  this.positionY.push(this.Y);
+	  this.velocityX.push(0);
+    this.velocityY.push(0);
 	}
 
 	draw(){
 		fill(this.red, this.green, this.blue, this.opacity);
 		noStroke();
 
-		for (var particleA = 0; particleA < mass.length; particleA++) {
-		var accelerationX = 0, accelerationY = 0;
+		for (this.particleA = 0; this.particleA < this.mass.length; this.particleA++) {
+		this.accelerationX = 0, this.accelerationY = 0;
 
-		for (var particleB = 0; particleB < mass.length; particleB++) {
-			if (particleA != particleB) {
-				var distanceX = positionX[particleB] - positionX[particleA];
-				var distanceY = positionY[particleB] - positionY[particleA];
+		for (this.particleB = 0; this.particleB < this.mass.length; this.particleB++) {
+			if (this.particleA != this.particleB) {
+				this.distanceX = this.positionX[this.particleB] - this.positionX[this.particleA];
+				this.distanceY = this.positionY[this.particleB] - this.positionY[this.particleA];
 
-				var distance = sqrt(distanceX * distanceX + distanceY * distanceY);
-				if (distance < 1) distance = 1;
+				this.distance = sqrt(this.distanceX * this.distanceX + this.distanceY * this.distanceY);
+				if (this.distance < 1) this.distance = 1;
 
-				var force = (distance - 320) * mass[particleB] / distance;
-				accelerationX += force * distanceX;
-				accelerationY += force * distanceY;
+				this.force = (this.distance - 320) * this.mass[this.particleB] / this.distance;
+				this.accelerationX += this.force * this.distanceX;
+				this.accelerationY += this.force * this.distanceY;
 			}
 		}
 
-		velocityX[particleA] = velocityX[particleA] * 0.99 + accelerationX * mass[particleA];
-		velocityY[particleA] = velocityY[particleA] * 0.99 + accelerationY * mass[particleA];
+		this.velocityX[this.particleA] = this.velocityX[this.particleA] * 0.99 + this.accelerationX * this.mass[this.particleA];
+		this.velocityY[this.particleA] = this.velocityY[this.particleA] * 0.99 + this.accelerationY * this.mass[this.particleA];
 	}
 
-	for (var particle = 0; particle < mass.length; particle++) {
-		positionX[particle] += velocityX[particle];
-		positionY[particle] += velocityY[particle];
-		ellipse(positionX[particle], positionY[particle], mass[particle] * this.size, mass[particle] * this.size);
+	for (this.particle = 0; this.particle < this.mass.length; this.particle++) {
+		this.positionX[this.particle] += this.velocityX[this.particle];
+		this.positionY[this.particle] += this.velocityY[this.particle];
+		ellipse(this.positionX[this.particle], this.positionY[this.particle], this.mass[this.particle] * this.size, this.mass[this.particle] * this.size);
 	}
 	}
 

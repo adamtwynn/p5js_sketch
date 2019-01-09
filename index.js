@@ -2,15 +2,12 @@ var p;
 
 function setup(){
 createCanvas(windowWidth,windowHeight);
-//	createCanvas(windowWidth,windowHeight,WEBGL);
-//	g = createGraphics(400,400);
 	p = new Particle (mouseX,mouseY);
 }
 function draw(){
-//function draw(g){
 	background(32);
 	p.draw()
-//	p.draw(g);
+
 }
 function mouseClicked(){
 	p.addNewParticle();
