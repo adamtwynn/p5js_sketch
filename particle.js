@@ -16,8 +16,6 @@ class Particle{
         this.velocityY = [];
     }
 
-
-
     setRed(red){
         this.red = red;
     }
