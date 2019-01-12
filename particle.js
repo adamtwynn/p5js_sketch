@@ -28,14 +28,14 @@ class Particle{
         this.blue = blue;
     }
 
-    restart(reset){
+    restart(){
         location.reload();
     }
 
-    larger(large){
+    larger(){
         this.size = this.size*2;
     }
-    smaller(small){
+    smaller(){
         this.size = this.size/2;
     }
 

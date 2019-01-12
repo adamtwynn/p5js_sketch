@@ -1,0 +1,27 @@
+{
+  "name": "new-sketch",
+  "version": "1.0.0",
+  "description": "Renewable Componenets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamwynn09/ParticleSketch.git"
+  },
+  "keywords": [
+    "classes",
+    "methods"
+  ],
+  "author": "Adam Wynn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamwynn09/ParticleSketch/issues"
+  },
+  "homepage": "https://github.com/adamwynn09/ParticleSketch#readme",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-p5js": "^1.0.1"
+  }
+}

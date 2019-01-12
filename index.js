@@ -19,39 +19,36 @@ function mouseDragged(){
 
 document.addEventListener('DOMContentLoaded', function(){
     var r = document.getElementById('colred');
-    function changeRed(event){
+    function changeRed(){
         let red = document.getElementById('colred').value;
         p.setRed(red);
     }
 
     var g = document.getElementById('colgreen');
-    function changeGreen(event){
+    function changeGreen(){
         let green = document.getElementById('colgreen').value;
         p.setGreen(green);
     }
 
     var b = document.getElementById('colblue');
-    function changeBlue(event){
+    function changeBlue(){
         let blue = document.getElementById('colblue').value;
         p.setBlue(blue);
     }
 
     var reset = document.getElementById('reset');
-    function restart(event){
-        let reset = document.getElementById('reset').value;
-        p.restart(reset);
+    function restart(){
+        p.restart();
     }
 
     var s = document.getElementById('half');
-    function smaller(event){
-        let small = document.getElementById('half').value;
-        p.smaller(small);
+    function smaller(){
+        p.smaller();
     }
 
     var l = document.getElementById('double');
-    function larger(event){
-        let large = document.getElementById('double').value;
-        p.larger(large);
+    function larger(){
+        p.larger();
     }
 
     r.addEventListener('change', changeRed);
