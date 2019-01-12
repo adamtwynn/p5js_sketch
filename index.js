@@ -1,5 +1,4 @@
 var p;
-var g;
 
 function setup(){
     createCanvas(windowWidth,windowHeight);
@@ -7,7 +6,7 @@ function setup(){
 }
 function draw(){
     background(32);
-    p.draw(g);
+    p.draw();
 
 }
 function mouseClicked(){
