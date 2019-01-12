@@ -1,6 +1,6 @@
 Title
 ======
-##Heading
+## Heading
 
 Paragraph
 
