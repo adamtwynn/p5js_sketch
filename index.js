@@ -2,7 +2,7 @@ var p;
 var g;
 
 function setup(){
-    createCanvas(windowWidth,windowHeight, WEBGL);
+    createCanvas(800,800, WEBGL);
     g = createGraphics(800,800);
     p = new Particle (mouseX,mouseY);
 }
@@ -13,7 +13,7 @@ function draw(){
     rotateX(frameCount * 0.01);
     rotateY(frameCount * 0.01);
     texture(g);
-    box(800);
+    box(400);
 }
 function mouseClicked(){
     p.addNewParticle();

@@ -1,5 +1,8 @@
-Title
+'Wobbly Swarm'
 ======
+## Changes Made
+## particle.js (class)
+## index.js (example)
 ## Original Code
 
 "Wobbly Swarm" by Konstantin Makhmutov
