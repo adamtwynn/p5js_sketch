@@ -1,5 +1,8 @@
+//class is called from index.js
 class Particle{
+    //constructor with defaults if variables are undefined as parameters
     constructor(x=50,y=50,m=random(0.003,0.03),r=64,g=255,b=255,o=192,s=1000){
+        //variables from sketch are properties of the object
         this.X = x;
         this.Y = y;
         this.radius = m;
@@ -16,6 +19,7 @@ class Particle{
         this.velocityY = [];
     }
 
+    //the following methods are called from index.js to change values of parameters
     setRed(red){
         this.red = red;
     }
@@ -28,6 +32,7 @@ class Particle{
         this.blue = blue;
     }
 
+    //if reset button is pressed on the HTML file, reload the page
     restart(){
         location.reload();
     }
@@ -44,6 +49,7 @@ class Particle{
         this.Y = mouseY;
     }
 
+    //in this example, when mouse is pressed, add new values to each array to create a new particle
     addNewParticle(){
         this.resetmouseposition(mouseX,mouseY);
         this.radius = random(0.003, 0.03);
@@ -54,17 +60,20 @@ class Particle{
         this.velocityY.push(0);
     }
 
+    //draw method with optional parameter g
     draw(g){
+        //if g exists, draw on g
         if(g){
             g.fill(this.red, this.green, this.blue, this.opacity);
             g.noStroke();
         }
+        //if g is undefined, draw onto the canvas
         else{
             fill(this.red, this.green, this.blue, this.opacity);
             noStroke();
         }
 
-
+        //calculate the velocity of each particle stored in the arrays
         for (this.particleA = 0; this.particleA < this.mass.length; this.particleA++) {
             this.accelerationX = 0, this.accelerationY = 0;
 

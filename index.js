@@ -1,13 +1,19 @@
 var p;
+var g;
 
 function setup(){
-    createCanvas(windowWidth,windowHeight);
+    createCanvas(windowWidth,windowHeight, WEBGL);
+    g = createGraphics(800,800);
     p = new Particle (mouseX,mouseY);
 }
 function draw(){
-    background(32);
-    p.draw();
-
+    g.background(32);
+    p.draw(g);
+    background(0);
+    rotateX(frameCount * 0.01);
+    rotateY(frameCount * 0.01);
+    texture(g);
+    box(800);
 }
 function mouseClicked(){
     p.addNewParticle();
@@ -17,6 +23,7 @@ function mouseDragged(){
     p.addNewParticle();
 }
 
+//Listener for DOM interaction
 document.addEventListener('DOMContentLoaded', function(){
     var r = document.getElementById('colred');
     function changeRed(){
@@ -57,9 +64,6 @@ document.addEventListener('DOMContentLoaded', function(){
     reset.addEventListener('click', restart);
     s.addEventListener('click', smaller);
     l.addEventListener('click', larger);
-
-
-
 
     var cf = document.getElementById('colour_form');
 
