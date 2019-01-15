@@ -60,6 +60,7 @@ class Particle{
         this.velocityY.push(0);
     }
 
+
     //draw method with optional parameter g
     draw(g){
         //if g exists, draw on g
@@ -98,6 +99,7 @@ class Particle{
         for (this.particle = 0; this.particle < this.mass.length; this.particle++) {
             this.positionX[this.particle] += this.velocityX[this.particle];
             this.positionY[this.particle] += this.velocityY[this.particle];
+            //draw the ellipses in new locations
             if(g){
                 g.ellipse(this.positionX[this.particle], this.positionY[this.particle], this.mass[this.particle] * this.size, this.mass[this.particle] * this.size);
             }
