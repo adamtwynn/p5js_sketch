@@ -37,48 +37,34 @@ This is a p5 method which is used to set the colour used to fill each ellipse. I
 This is a p5 method which disables the drawing of the outline of each ellipse.
 
 `ellipse()`
-This is a p5 which draws an ellipse to the screen. The first two parameters set the location (x and y coordinates respectively) and the final two set the width and height of the ellipse which is the mass property in my sketch. I have multiplied the value of the width of height by the size property if the user uses the larger and smaller buttons to change the size of the particles. 
+This is a p5 which draws an ellipse to the screen. The first two parameters set the location (x and y coordinates respectively) and the final two set the width and height of the ellipse which is the mass property in my sketch. I have multiplied the value of the width of height by the size property if the user uses the larger and smaller buttons to change the size of the particles.
 
 ## index.js (example)
-`function setup()`
+`function setup()` The setup function is called when the program is first run. In my example, this is used to initialise the canvas and graphics area as well as create a new instance of the particle class stored in particle.js.
 
-`function draw()`
+`function draw()` The draw function is called repeatedly throughout the run time of the program. In my example, it is used to repeatedly call the draw method inside of the class particle which the parameter g which is a value returned by the createGraphics() function. This is therefore used to display different positions of each ellipse. This is also where I have included the code the sketch a 3d cube, where the sketch drawn with createGraphics() is used as the texture to each face.
 
-`function mouseClicked()`
-
-`function mouseDragged()`
+`function mouseClicked()` and `function mouseDragged()`. The mouseClicked() function is called after a mouse button has been pressed and then released. The mouseDragged() function is called after a mouse has been pressed and is moved before it is released.
 
 `createCanvas()`
+This is a p5 function is creates a canvas element where the parameters are the width and height of the canvas respectively. I have also passed `WEBGL` are a parameter which is used to enable WebGL features.
 
 `createGraphics()`
+This function creates a new graphics area where the sketch could be drawn. This also returns a value which is passed through the draw method in the class as a parameter.
 
-`background()`
+`background()` This is a p5 function which sets the colour of the background of the canvas. In my example, I have also used `g.background()` which is used to change the background colour of the graphics area.
 
-`rotateX`
+`rotateX()` and `rotateY()` These are p5.js functions that are used to rotate the sketch around the X and Y axis respectively. They accept the angle of rotation as a parameter which in my sketch is `(framecount * 0.01)`. frameCount is a system variable which holds the number of frames that have been displayed since the code had started.
 
-`rotateY`
+`box()` This is a p5 function which draws a box which the width as a parameter.
 
-`texture`
+`changeRed()`, `changeGreen()`, `changeBlue()`, `restart()`, `smaller()`, `larger()` All of these functions work with the DOM and when called, gets the value of the slider/button using `getElementById().value`. They also call the function to update in the particle class.
 
-`box()`
+`addEventListener()` This sets up a function to be called whenever a specific event happens. The first parameter is the type of event. In my example, this is either change or click. Change is called when the value of the form element is changed and click is called when the mouse is pressed and released. The second parameter is the listener which are the functions in the paragraph above. Essentially, this function calls the above functions when a specific event happens.
 
-`changeRed()`
+`getElementById()` This function returns an element representing the element whose Id matches the string. These Ids are defined in index.html.
 
-`changeGreen()`
-
-`changeBlue()`
-
-`restart()`
-
-`smaller()`
-
-`larger()`
-
-`addEventListener()`
-
-`getElementById()`
-
-`preventDefault()`
+`preventDefault()` The function event.preventDefault() prevents the form element from carrying out what is would normally do.
 
 
 ## Original Code
