@@ -12,6 +12,7 @@ class Particle{
         this.opacity = o;
         this.size = s;
 
+        //initialise empty arrays to store mass, position and velocity
         this.mass = [];
         this.positionX = [];
         this.positionY = [];
@@ -78,6 +79,8 @@ class Particle{
         for (this.particleA = 0; this.particleA < this.mass.length; this.particleA++) {
             this.accelerationX = 0, this.accelerationY = 0;
 
+
+            //calculate distance
             for (this.particleB = 0; this.particleB < this.mass.length; this.particleB++) {
                 if (this.particleA != this.particleB) {
                     this.distanceX = this.positionX[this.particleB] - this.positionX[this.particleA];
@@ -86,20 +89,22 @@ class Particle{
                     this.distance = sqrt(this.distanceX * this.distanceX + this.distanceY * this.distanceY);
                     if (this.distance < 1) this.distance = 1;
 
+                    //calculate force using distance and mass
                     this.force = (this.distance - 320) * this.mass[this.particleB] / this.distance;
+                    //calculate acceleration using force and distance
                     this.accelerationX += this.force * this.distanceX;
                     this.accelerationY += this.force * this.distanceY;
                 }
             }
-
+            //calculate velocity
             this.velocityX[this.particleA] = this.velocityX[this.particleA] * 0.99 + this.accelerationX * this.mass[this.particleA];
             this.velocityY[this.particleA] = this.velocityY[this.particleA] * 0.99 + this.accelerationY * this.mass[this.particleA];
         }
-
+        //calculate new positions
         for (this.particle = 0; this.particle < this.mass.length; this.particle++) {
             this.positionX[this.particle] += this.velocityX[this.particle];
             this.positionY[this.particle] += this.velocityY[this.particle];
-            //draw the ellipses in new locations
+            //draw the ellipses in new locations and mulitply size by size property
             if(g){
                 g.ellipse(this.positionX[this.particle], this.positionY[this.particle], this.mass[this.particle] * this.size, this.mass[this.particle] * this.size);
             }
