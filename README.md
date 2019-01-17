@@ -7,7 +7,7 @@ I have included an example page to demonstrate how the class can be used. The ex
 ## particle.js (class)
 
 `constructor()`
-The constructor method is used to initialise objects created with the class. The following parameter are passed through the method: x, y, m, r, g, b, o and s. 'x' and 'y' passes the position of where the ellipse will be created. 'm' passes the radius of each ellipse. It is called mass in the class as it is used to calculate force, acceleration and velocity. 'r', 'g', 'b' and 'o' are all used to change the colour of the ellipse (red, green, blue and opacity) and s is used as a size multiplier so the user can change the size of all of the ellipses. All default values are set at this stage. I have used the `this` keyword to refer to the class itself. This means that whenever, I call a property of the class inside of the class, I can use the `this` keyword. I have also created several empty arrays in the constructor to store the mass, position and velocity of each ellipse in the sketch.
+The constructor method is used to initialise objects created with the class. The following parameter are passed through the method: x, y, m, r, g, b, o and s. 'x' and 'y' passes the position of where the ellipse will be created. 'm' passes the radius of each ellipse. It is called mass in the class as it is used to calculate force, acceleration and velocity. 'r', 'g', 'b' and 'o' are all used to change the colour of the ellipse (red, green, blue and opacity) and s is used as a size multiplier so the user can change the size of all of the ellipses. All default values are set at this stage. I have used the `this` keyword to refer to the class itself. This means that whenever I call a property of the class inside of the class, I can use the `this` keyword. I have also created several empty arrays in the constructor to store the mass, position and velocity of each ellipse in the sketch.
 
 `setRed()`
 This method is called from index.js and is used to change the value of the red property. A parameter called red is passed through the method which is the value of the red slider in my example. The default value of red is 64.
@@ -22,7 +22,7 @@ This method is called from index.js and is used to change the value of the blue 
 This method is used to refresh the page when the method is called from index.js. Inside of this method, I am using the `location.reload()` method which reloads the page from the cache by default.
 
 `larger()` and `smaller()`
-These methods are called from p5.js are are used to either multiply or divide the value of the size property by 2. In my example, these methods are called when buttons are clicked by the user.
+These methods are called from index.js are are used to either multiply or divide the value of the size property by 2. In my example, these methods are called when buttons are clicked by the user.
 
 `addNewParticle()`
 This method is used to add new values to the array when the mouse is pressed. These values will make up properties that will be needed to create each ellipse. The number of values in each list is therefore the number of ellipses on the sketch. I use the `.push` method to add the values stored in the corresponding properties to the end of array. I also call the `resetmouseposition()` method which replaces the values in the X and Y properties with the current position of the mouse before adding the values to the array. This method therefore has parameters mouseX and mouseY. When adding a value to the mass array, I have used the `random()` method which in my code returns a random number between 0.003 and 0.03.
@@ -42,7 +42,7 @@ This is a p5 which draws an ellipse to the screen. The first two parameters set 
 ## index.js (example)
 `function setup()` The setup function is called when the program is first run. In my example, this is used to initialise the canvas and graphics area as well as create a new instance of the particle class stored in particle.js.
 
-`function draw()` The draw function is called repeatedly throughout the run time of the program. In my example, it is used to repeatedly call the draw method inside of the class particle which the parameter g which is a value returned by the createGraphics() function. This is therefore used to display different positions of each ellipse. This is also where I have included the code the sketch a 3d cube, where the sketch drawn with createGraphics() is used as the texture to each face.
+`function draw()` The draw function is called repeatedly throughout the run time of the program. In my example, it is used to repeatedly call the draw method inside of the class particle which the parameter g which is a value returned by the createGraphics() function. This is therefore used to display different positions of each ellipse. This is also where I have included the code to sketch a 3d cube, where the sketch drawn with createGraphics() is used as the texture for each face.
 
 `function mouseClicked()` and `function mouseDragged()`. The mouseClicked() function is called after a mouse button has been pressed and then released. The mouseDragged() function is called after a mouse has been pressed and is moved before it is released.
 
